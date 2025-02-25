@@ -111,10 +111,17 @@ find / -type f -size +20M -exec ls -lh {} \; 2>/dev/null
 
 全局搜索关键字，并输出它们的路径
 ```
-grep -r -l "关键字" /
+sudo grep -r -l "关键字" /
 ```
+
+当前目录开始
 ```
-find . -type f -exec grep -Hn '关键字' {} \;
+sudo find . -type f -exec grep -IHn '关键字' {} \;
+```
+
+根目录开始
+```
+sudo find / -type f -exec grep -IHn '关键字' {} \;
 ```
 
 文件重命名命令：`mv`
