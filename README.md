@@ -109,9 +109,12 @@ find / -type f -name "*文件名*" 2>/dev/null
 find / -type f -size +20M -exec ls -lh {} \; 2>/dev/null
 ```
 
-在整个文件系统中查找包含特定字符串的文件，并输出它们的路径
+全局搜索关键字，并输出它们的路径
 ```
 grep -r -l "关键字" /
+```
+```
+find . -type f -exec grep -Hn '关键字' {} \;
 ```
 
 文件重命名命令：`mv`
